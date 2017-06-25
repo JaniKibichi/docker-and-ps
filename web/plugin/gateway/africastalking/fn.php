@@ -38,8 +38,8 @@ function africastalking_hook_sendsms($smsc, $sms_sender, $sms_footer, $sms_to, $
 		$url = $plugin_config['africastalking']['url'] . '/restless/send?username=' . $plugin_config['africastalking']['api_username'] .'&Apikey=' . $plugin_config['africastalking']['api_password'] . '&from=' .$plugin_config['africastalking']['module_sender']. '&to=' . $sms_to . '&message=' . $sms_msg;
 		if (function_exists('curl_init')) {
 			$ch = curl_init($url);
-			//curl_setopt($ch, CURLOPT_TIMEOUT, 60);	
-			//curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);			
+			curl_setopt($ch, CURLOPT_TIMEOUT, 60);	
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);			
 			$returns = curl_exec($ch);
 			curl_close($ch);	
 			_log("sendsms url:[" . $url . "] callback:[" . $plugin_config['africastalking']['callback_url'], "] smsc:[" . $smsc . "]", 3, "africastalking_hook_sendsms");
