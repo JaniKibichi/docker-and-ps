@@ -67,13 +67,13 @@ function africastalking_hook_sendsms($smsc, $sms_sender, $sms_footer, $sms_to, $
 				if(count($resp->SMSMessageData->Recipients) > 0){
 					$reslts =$resp->SMSMessageData->Recipients;
 					foreach($reslts as $result) {
-						if ($result->status == 'Sent') {
-							_log("sent smslog_id:" . $smslog_id . " message_id:" .$result->messageId . " status:" . $result->status . " error:" . $c_error_text . " smsc:[" . $smsc . "]", 3, "africastalking_hook_sendsms");
+						if ($result->status) {
+							_log("sent smslog_id:" . $smslog_id . " message_id:" .$result->messageId . " status:" . $result->status . " error:" . $result->status . " smsc:[" . $smsc . "]", 3, "africastalking_hook_sendsms");
 							$db_query = "
 								INSERT INTO " . _DB_PREF_ . "_gatewayAfricastalking (local_smslog_id,remote_smslog_id,status,error_text)
 								VALUES ('$smslog_id','$result->messageId','$result->status','$c_error_text')";
 							$id = @dba_insert_id($db_query);
-							if ($id && ($c_status == 'Sent')) {
+							if ($id && ($result->status == 'Sent')) {
 								$ok = true;
 								$p_status = 0;
 							} else {
