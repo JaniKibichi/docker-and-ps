@@ -1811,7 +1811,7 @@ CREATE TABLE `playsms_gatewayAfricastalking_config` (
 --
 LOCK TABLES `playsms_gatewayAfricastalking_config` WRITE;
 /*!40000 ALTER TABLE `playsms_gatewayAfricastalking_config` DISABLE KEYS */;
-INSERT INTO `playsms_gatewayAfricastalking_config` (c_timestamp, cfg_name, cfg_api_id,cfg_username,cfg_password,cfg_module_sender,cfg_send_url, cfg_callback_url, cfg_credit , cfg_additional_param, cfg_datetime_timezone)VALUES (0,'africastalking','at','WeloveNerds','4c9c530ddc1e0e9fddef30225735cee8758ada3f88b0fbdb24ae894b8c76330e','20880','https://api.africastalking.com','http://213.136.83.126:8080/playsms/plugin/gateway/africastalking/callback.php',1000,'at','+0300');
+INSERT INTO `playsms_gatewayAfricastalking_config` (c_timestamp, cfg_name, cfg_api_id,cfg_username,cfg_password,cfg_module_sender,cfg_send_url, cfg_callback_url, cfg_credit , cfg_additional_param, cfg_datetime_timezone)VALUES (0,'africastalking','at','WeloveNerds','4c9c530ddc1e0e9fddef30225735cee8758ada3f88b0fbdb24ae894b8c76330e','20880','http://api.africastalking.com','http://213.136.83.126:8080/playsms/plugin/gateway/africastalking/callback.php',1000,'at','+0300');
 /*!40000 ALTER TABLE `playsms_gatewayAfricastalking_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
