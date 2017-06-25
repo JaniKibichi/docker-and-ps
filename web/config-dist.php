@@ -38,7 +38,7 @@ $core_config['apps_path']['logs'] = '#PATHLOG#';
 
 // log level: 0=disabled, 1=info, 2=warning, 3=debug, 4=verbose
 // WARNING: log level 3 and 4 will also save sensitive information such as password for used gateway
-$core_config['logstate']	= 3;
+$core_config['logstate']	= 4;
 
 // log file
 $core_config['logfile']		= 'playsms.log';
@@ -50,7 +50,7 @@ $core_config['logaudit']	= true;
 $core_config['logauditfile']	= 'audit.log';
 
 // are we using http or https ? the default is using http instead https
-$core_config['ishttps']		= false;
+$core_config['ishttps']		= true;
 
 // are we using dlrd or not. the default is using dlrd
 $core_config['isdlrd']		= true;
